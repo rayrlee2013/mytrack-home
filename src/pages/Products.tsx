@@ -1,110 +1,102 @@
+import { ArrowRight, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Footer } from "@/components/layout/Footer";
-import { CalendarDays, ArrowRight, CalendarCheck, Lock, Zap } from "lucide-react";
+import { type Locale, productCatalog, siteContent } from "@/content/siteContent";
 
-type Locale = "en" | "zh";
-
-const content = {
-  en: {
-    product: "iTrackDaily",
-    tagline: "Simple · Private · Effective",
-    headline: "Build habits that actually stick.",
-    desc: "A simple way to track your daily habits without complexity.",
-    features: [
-      { icon: CalendarDays, title: "Visual Calendar", desc: "See your progress at a glance" },
-      { icon: Lock, title: "Private", desc: "Your data stays on your device" },
-      { icon: Zap, title: "Fast", desc: "Open and track in seconds" },
-    ],
-    cta: "Start Free",
-    more: "More products coming soon...",
-  },
-  zh: {
-    product: "iTrackDaily",
-    tagline: "简单 · 私密 · 有效",
-    headline: "养成真正有效的习惯。",
-    desc: "简单的方式追踪您的日常习惯，无需复杂性。",
-    features: [
-      { icon: CalendarCheck, title: "视觉日历", desc: "一目了然地查看进度" },
-      { icon: Lock, title: "隐私保护", desc: "您的数据保存在本地" },
-      { icon: Zap, title: "极速体验", desc: "打开即可追踪" },
-    ],
-    cta: "免费开始",
-    more: "更多产品即将推出...",
-  },
-};
-
-function ProductPage({ locale }: { locale: Locale }) {
-  const t = content[locale as keyof typeof content];
+export default function ProductsPage({ locale }: { locale: Locale }) {
+  const t = siteContent[locale].products;
+  const products = productCatalog[locale];
 
   return (
-    <div className="min-h-screen flex flex-col pt-14">
-      <div className="flex-1 px-4 py-20">
-        <div className="max-w-3xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 mb-6">
-            <CalendarCheck className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-              {t.product}
-            </span>
+    <div className="min-h-screen flex flex-col page-shell pt-16">
+      <main className="flex-1 site-container section-shell">
+        <header className="max-w-3xl animate-rise">
+          <h1 className="text-display text-5xl font-semibold text-slate-900">{t.title}</h1>
+          <p className="mt-4 text-lg text-[var(--brand-muted)]">{t.subtitle}</p>
+        </header>
+
+        <section className="mt-10 grid gap-5">
+          {products.map((product, idx) => (
+            <article
+              key={product.slug}
+              className="surface-card card-lift p-6 md:p-7 animate-fade-soft"
+              style={{ animationDelay: `${idx * 90}ms` }}
+            >
+              <div className="flex items-start justify-between gap-4 flex-wrap">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.16em] text-[var(--brand-blue)]">{product.status}</p>
+                  <h2 className="mt-2 text-3xl font-semibold text-slate-900">{product.name}</h2>
+                  <p className="mt-2 text-sm font-semibold text-slate-700">{product.oneLiner}</p>
+                  <p className="mt-3 text-slate-600 max-w-2xl">{product.summary}</p>
+                </div>
+                <div className="surface-soft px-3 py-2 text-xs text-slate-600">{product.audience}</div>
+              </div>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {product.highlights.map((item) => (
+                  <span key={item} className="pill-chip text-xs px-3 py-1 rounded-full">
+                    {item}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                <Link
+                  to="/philosophy"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold btn-secondary btn-motion"
+                >
+                  {t.detailCta}
+                  <ArrowRight className="w-4 h-4 motion-arrow" />
+                </Link>
+                <a
+                  href={product.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold btn-primary btn-motion"
+                >
+                  {t.openCta}
+                  <ExternalLink className="w-4 h-4 motion-arrow" />
+                </a>
+              </div>
+            </article>
+          ))}
+        </section>
+
+        <section className="mt-10 surface-card card-lift p-7 md:p-9">
+          <h3 className="text-2xl font-semibold text-slate-900">{t.domainsTitle}</h3>
+          <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {t.domains.map((item, idx) => (
+              <article
+                key={item.title}
+                className={`feature-tone ${item.tone} animate-fade-soft`}
+                style={{ animationDelay: `${idx * 90}ms` }}
+              >
+                <h4 className="font-semibold">{item.title}</h4>
+                <p className="mt-2 text-sm leading-6 opacity-90">{item.desc}</p>
+              </article>
+            ))}
           </div>
+        </section>
 
-          {/* Tagline */}
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-            {t.tagline}
-          </p>
-
-          {/* Headline */}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-            {t.headline}
-          </h1>
-
-          {/* Description */}
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto">
-            {t.desc}
-          </p>
-
-          {/* CTA */}
-          <a
-            href="https://daily.mytrack.club/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-xl hover:opacity-90 transition-opacity mb-16"
-          >
-            {t.cta}
-            <ArrowRight className="w-4 h-4" />
-          </a>
-
-          {/* Features */}
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
-            {t.features.map((feature, i) => {
-              const Icon = feature.icon;
+        <section className="mt-10 surface-card card-lift p-7 md:p-9">
+          <h3 className="text-2xl font-semibold text-slate-900">{t.roadmapTitle}</h3>
+          <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {t.roadmapItems.map((item, idx) => {
+              const tones = ["tone-blue", "tone-teal", "tone-violet"] as const;
               return (
                 <div
-                  key={i}
-                  className="p-6 rounded-xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50"
+                  key={item}
+                  className={`feature-tone ${tones[idx % tones.length]} animate-fade-soft`}
+                  style={{ animationDelay: `${idx * 80}ms` }}
                 >
-                  <Icon className="w-6 h-6 text-blue-600 mx-auto mb-3" strokeWidth={2} />
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {feature.desc}
-                  </p>
+                  {item}
                 </div>
               );
             })}
           </div>
-
-          {/* More Products */}
-          <div className="pt-8 border-t border-gray-200 dark:border-gray-800">
-            <p className="text-gray-500 dark:text-gray-400">
-              {t.more}
-            </p>
-          </div>
-        </div>
-      </div>
-      <Footer />
+        </section>
+      </main>
+      <Footer locale={locale} />
     </div>
   );
 }
-
-export default ProductPage;

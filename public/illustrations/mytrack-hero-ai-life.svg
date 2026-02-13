@@ -1,0 +1,87 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F9FF"/>
+      <stop offset="1" stop-color="#EAF2FB"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" rx="32" fill="url(#bg)"/>
+
+  <circle cx="140" cy="120" r="56" fill="#D8EEFF"/>
+  <circle cx="1050" cy="150" r="72" fill="#E7E2FF"/>
+  <circle cx="1040" cy="640" r="68" fill="#FFECD9"/>
+
+  <rect x="76" y="80" width="420" height="92" rx="20" fill="#FFFFFF" stroke="#D6E7F7" stroke-width="2"/>
+  <text x="104" y="126" font-family="Manrope, sans-serif" font-size="28" font-weight="800" fill="#112342">MyTrack</text>
+  <text x="104" y="152" font-family="Manrope, sans-serif" font-size="16" font-weight="600" fill="#4A617F">Personal + AI + Data + Daily Life</text>
+
+  <rect x="76" y="208" width="420" height="172" rx="20" fill="#FFFFFF" stroke="#D6E7F7" stroke-width="2"/>
+  <text x="104" y="248" font-family="Manrope, sans-serif" font-size="18" font-weight="700" fill="#1086D2">Life Logging</text>
+  <text x="104" y="278" font-family="Manrope, sans-serif" font-size="15" font-weight="500" fill="#4A617F">Capture routines and moments with low friction.</text>
+
+  <rect x="104" y="300" width="170" height="38" rx="10" fill="#E9F4FF" stroke="#B7D9F8"/>
+  <text x="126" y="324" font-family="Manrope, sans-serif" font-size="13" font-weight="700" fill="#1A5A93">Private by default</text>
+
+  <rect x="286" y="300" width="180" height="38" rx="10" fill="#E8F8F4" stroke="#B8EADC"/>
+  <text x="309" y="324" font-family="Manrope, sans-serif" font-size="13" font-weight="700" fill="#1E6F62">AI-assisted insights</text>
+
+  <rect x="76" y="404" width="420" height="314" rx="20" fill="#FFFFFF" stroke="#D6E7F7" stroke-width="2"/>
+  <text x="104" y="446" font-family="Manrope, sans-serif" font-size="18" font-weight="700" fill="#112342">Data clarity for daily decisions</text>
+
+  <rect x="104" y="470" width="112" height="88" rx="14" fill="#E9F4FF" stroke="#B7D9F8"/>
+  <text x="128" y="510" font-family="Manrope, sans-serif" font-size="26" font-weight="800" fill="#155A93">7d</text>
+  <text x="121" y="536" font-family="Manrope, sans-serif" font-size="13" font-weight="600" fill="#4A617F">consistency</text>
+
+  <rect x="232" y="470" width="112" height="88" rx="14" fill="#F0EFFF" stroke="#D0C9FF"/>
+  <text x="258" y="510" font-family="Manrope, sans-serif" font-size="26" font-weight="800" fill="#52419E">AI</text>
+  <text x="257" y="536" font-family="Manrope, sans-serif" font-size="13" font-weight="600" fill="#4A617F">summary</text>
+
+  <rect x="360" y="470" width="112" height="88" rx="14" fill="#FFF3E8" stroke="#FFD8B0"/>
+  <text x="386" y="510" font-family="Manrope, sans-serif" font-size="26" font-weight="800" fill="#9A5A19">+3</text>
+  <text x="379" y="536" font-family="Manrope, sans-serif" font-size="13" font-weight="600" fill="#4A617F">patterns</text>
+
+  <path d="M118 620 L194 588 L260 612 L334 564 L410 594" stroke="#1086D2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="118" cy="620" r="6" fill="#1086D2"/>
+  <circle cx="194" cy="588" r="6" fill="#1E6F62"/>
+  <circle cx="260" cy="612" r="6" fill="#52419E"/>
+  <circle cx="334" cy="564" r="6" fill="#9A5A19"/>
+  <circle cx="410" cy="594" r="6" fill="#1086D2"/>
+
+  <rect x="550" y="92" width="570" height="626" rx="28" fill="#FFFFFF" stroke="#CFE2F3" stroke-width="2"/>
+  <rect x="550" y="92" width="570" height="108" rx="28" fill="#1086D2"/>
+  <text x="590" y="142" font-family="Manrope, sans-serif" font-size="20" font-weight="800" fill="#F1FAFF">iTrackDaily</text>
+  <text x="590" y="172" font-family="Manrope, sans-serif" font-size="15" font-weight="600" fill="#D5EEFF">Track life privately. Understand progress instantly.</text>
+
+  <rect x="590" y="228" width="490" height="128" rx="18" fill="#F6FBFF" stroke="#D5E6F5"/>
+  <text x="620" y="268" font-family="Manrope, sans-serif" font-size="17" font-weight="700" fill="#112342">Morning routine block</text>
+  <text x="620" y="296" font-family="Manrope, sans-serif" font-size="14" font-weight="500" fill="#4A617F">Walk + reading + no sugar.</text>
+
+  <rect x="620" y="314" width="128" height="30" rx="10" fill="#E8F8F4" stroke="#B8EADC"/>
+  <text x="644" y="334" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#1E6F62">89% consistency</text>
+
+  <rect x="590" y="378" width="490" height="146" rx="18" fill="#F6FBFF" stroke="#D5E6F5"/>
+  <text x="620" y="418" font-family="Manrope, sans-serif" font-size="17" font-weight="700" fill="#112342">Weekly analysis snapshot</text>
+
+  <rect x="620" y="438" width="92" height="58" rx="12" fill="#E9F4FF" stroke="#B7D9F8"/>
+  <text x="654" y="470" font-family="Manrope, sans-serif" font-size="22" font-weight="800" fill="#155A93">12</text>
+
+  <rect x="726" y="438" width="92" height="58" rx="12" fill="#F0EFFF" stroke="#D0C9FF"/>
+  <text x="762" y="470" font-family="Manrope, sans-serif" font-size="22" font-weight="800" fill="#52419E">4</text>
+
+  <rect x="832" y="438" width="92" height="58" rx="12" fill="#FFF3E8" stroke="#FFD8B0"/>
+  <text x="866" y="470" font-family="Manrope, sans-serif" font-size="22" font-weight="800" fill="#9A5A19">7</text>
+
+  <rect x="938" y="438" width="122" height="58" rx="12" fill="#E8F8F4" stroke="#B8EADC"/>
+  <text x="966" y="470" font-family="Manrope, sans-serif" font-size="16" font-weight="800" fill="#1E6F62">AI Tips</text>
+
+  <rect x="590" y="548" width="490" height="138" rx="18" fill="#F6FBFF" stroke="#D5E6F5"/>
+  <text x="620" y="590" font-family="Manrope, sans-serif" font-size="17" font-weight="700" fill="#112342">Future product direction</text>
+  <text x="620" y="620" font-family="Manrope, sans-serif" font-size="14" font-weight="500" fill="#4A617F">Personal context + AI assistant + behavior analytics.</text>
+
+  <rect x="620" y="636" width="220" height="30" rx="10" fill="#1086D2"/>
+  <text x="662" y="656" font-family="Manrope, sans-serif" font-size="12" font-weight="800" fill="#F4FAFF">daily.mytrack.club</text>
+
+  <circle cx="1114" cy="88" r="24" fill="#E9F4FF" stroke="#B7D9F8"/>
+  <circle cx="1114" cy="88" r="9" fill="#1086D2"/>
+</svg>

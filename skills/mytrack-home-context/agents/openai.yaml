@@ -1,0 +1,5 @@
+interface:
+  display_name: "MyTrack Home Context"
+  short_description: "Analyze and implement changes for mytrack-home"
+  default_prompt: "Use project context to make safe, consistent changes in MyTrack Home and explain product impact."
+

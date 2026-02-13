@@ -1,67 +1,26 @@
 import { useState } from "react";
+import { AlertCircle, CheckCircle2, Send } from "lucide-react";
 import { Footer } from "@/components/layout/Footer";
-import { Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { type Locale, siteContent } from "@/content/siteContent";
 
-const WEBHOOK_URL = "https://discord.com/api/webhooks/1425707156161691660/dsEnk_Xrafr1DOWJe_nl3R52tZujy5uSwp5xGeHb6U3wqItocJ-d_YG9cFdJmpyDGb3e";
+const WEBHOOK_URL =
+  "https://discord.com/api/webhooks/1425707156161691660/dsEnk_Xrafr1DOWJe_nl3R52tZujy5uSwp5xGeHb6U3wqItocJ-d_YG9cFdJmpyDGb3e";
 
-type Locale = "en" | "zh";
-
-const content = {
-  en: {
-    title: "Contact",
-    name: "Your Name",
-    email: "Email",
-    message: "Message",
-    placeholder: {
-      name: "Enter your name",
-      email: "Enter your email",
-      message: "Write your message...",
-    },
-    submit: "Send Message",
-    sending: "Sending...",
-    success: "Message sent successfully!",
-    error: "Failed to send message. Please try again.",
-    emailError: "Please enter a valid email address",
-  },
-  zh: {
-    title: "联系我们",
-    name: "您的姓名",
-    email: "邮箱",
-    message: "内容",
-    placeholder: {
-      name: "请输入姓名",
-      email: "请输入邮箱",
-      message: "请输入内容...",
-    },
-    submit: "发送消息",
-    sending: "发送中...",
-    success: "消息发送成功！",
-    error: "发送失败，请重试。",
-    emailError: "请输入有效的邮箱地址",
-  },
-};
-
-function ContactPage({ locale }: { locale: Locale }) {
-  const t = content[locale as keyof typeof content];
+export default function ContactPage({ locale }: { locale: Locale }) {
+  const t = siteContent[locale].contact;
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [emailError, setEmailError] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  const validateEmail = (email: string) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const onEmailChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, email: value }));
+    setEmailError(value && !validateEmail(value) ? t.emailError : "");
   };
 
-  const handleEmailChange = (value: string) => {
-    setFormData({ ...formData, email: value });
-    if (value && !validateEmail(value)) {
-      setEmailError(t.emailError);
-    } else {
-      setEmailError("");
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
     if (!validateEmail(formData.email)) {
       setEmailError(t.emailError);
@@ -75,117 +34,104 @@ function ContactPage({ locale }: { locale: Locale }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          content: `**新消息**\n\n**姓名**: ${formData.name}\n**邮箱**: ${formData.email}\n\n**内容**:\n${formData.message}`,
+          content: `**MyTrack Contact**\n\n**Name**: ${formData.name}\n**Email**: ${formData.email}\n\n**Message**:\n${formData.message}`,
           username: "MyTrack Contact",
         }),
       });
 
-      if (response.ok) {
-        setStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
+      if (!response.ok) {
         setStatus("error");
+        return;
       }
+
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+      setEmailError("");
     } catch {
       setStatus("error");
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col pt-14">
-      <div className="flex-1 px-4 py-16">
-        <div className="max-w-xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
-              {t.title}
-            </h1>
+    <div className="min-h-screen flex flex-col page-shell pt-16">
+      <main className="flex-1 site-container section-shell">
+        <header className="max-w-3xl animate-rise">
+          <h1 className="text-display text-5xl font-semibold text-slate-900">{t.title}</h1>
+          <p className="mt-4 text-lg text-[var(--brand-muted)]">{t.subtitle}</p>
+        </header>
+
+        <form onSubmit={onSubmit} className="mt-8 surface-card p-6 md:p-7 space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1.5">{t.name}</label>
+            <input
+              type="text"
+              value={formData.name}
+              onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+              placeholder={t.placeholder.name}
+              required
+              className="w-full rounded-xl border border-slate-200 bg-white/90 px-4 py-3 text-sm focus:border-[#1086d2] focus:outline-none"
+            />
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                {t.name}
-              </label>
-              <input
-                type="text"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                placeholder={t.placeholder.name}
-                required
-                className="w-full px-4 py-3 rounded-xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 focus:border-blue-400 focus:outline-none transition-colors"
-              />
-            </div>
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1.5">{t.email}</label>
+            <input
+              type="email"
+              value={formData.email}
+              onChange={(e) => onEmailChange(e.target.value)}
+              placeholder={t.placeholder.email}
+              required
+              className={`w-full rounded-xl border bg-white/90 px-4 py-3 text-sm focus:outline-none ${
+                emailError ? "border-rose-300 focus:border-rose-500" : "border-slate-200 focus:border-[#1086d2]"
+              }`}
+            />
+            {emailError && <p className="mt-1 text-xs text-rose-600">{emailError}</p>}
+          </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                {t.email}
-              </label>
-              <input
-                type="email"
-                value={formData.email}
-                onChange={(e) => handleEmailChange(e.target.value)}
-                placeholder={t.placeholder.email}
-                required
-                className={`w-full px-4 py-3 rounded-xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm border transition-colors ${
-                  emailError
-                    ? "border-red-400 focus:border-red-400"
-                    : "border-gray-200/50 dark:border-gray-700/50 focus:border-blue-400"
-                }`}
-              />
-              {emailError && (
-                <p className="mt-1 text-sm text-red-500">{emailError}</p>
-              )}
-            </div>
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1.5">{t.message}</label>
+            <textarea
+              value={formData.message}
+              onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
+              placeholder={t.placeholder.message}
+              rows={6}
+              required
+              className="w-full rounded-xl border border-slate-200 bg-white/90 px-4 py-3 text-sm resize-none focus:border-[#1086d2] focus:outline-none"
+            />
+          </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                {t.message}
-              </label>
-              <textarea
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder={t.placeholder.message}
-                required
-                rows={5}
-                className="w-full px-4 py-3 rounded-xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 focus:border-blue-400 focus:outline-none transition-colors resize-none"
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={status === "sending" || status === "success" || !!emailError}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50"
-            >
-              {status === "sending" ? (
-                <>
-                  <span className="animate-spin">⏳</span>
-                  {t.sending}
-                </>
-              ) : status === "success" ? (
-                <>
-                  <CheckCircle2 className="w-4 h-4" />
-                  {t.success}
-                </>
-              ) : (
-                <>
-                  <Send className="w-4 h-4" />
-                  {t.submit}
-                </>
-              )}
-            </button>
-
-            {status === "error" && (
-              <div className="flex items-center justify-center gap-2 text-red-500 text-sm">
-                <AlertCircle className="w-4 h-4" />
-                {t.error}
-              </div>
+          <button
+            type="submit"
+            disabled={status === "sending" || status === "success" || Boolean(emailError)}
+            className="w-full inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold btn-primary disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {status === "sending" ? (
+              <>
+                <span className="w-4 h-4 rounded-full border-2 border-white/70 border-t-transparent animate-spin" />
+                {t.sending}
+              </>
+            ) : status === "success" ? (
+              <>
+                <CheckCircle2 className="w-4 h-4" />
+                {t.success}
+              </>
+            ) : (
+              <>
+                <Send className="w-4 h-4" />
+                {t.submit}
+              </>
             )}
-          </form>
-        </div>
-      </div>
-      <Footer />
+          </button>
+
+          {status === "error" && (
+            <div className="inline-flex items-center gap-1.5 text-sm text-rose-600">
+              <AlertCircle className="w-4 h-4" />
+              {t.error}
+            </div>
+          )}
+        </form>
+      </main>
+      <Footer locale={locale} />
     </div>
   );
 }
-
-export default ContactPage;
