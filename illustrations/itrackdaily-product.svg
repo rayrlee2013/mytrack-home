@@ -1,0 +1,172 @@
+<svg width="480" height="420" viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="p-bg" x1="0" y1="0" x2="480" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f0f9ff"/>
+      <stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="p-header" x1="40" y1="40" x2="440" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0284c7"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <filter id="card-shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0284c7" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="480" height="420" rx="24" fill="url(#p-bg)"/>
+
+  <!-- Decorative blur spots -->
+  <circle cx="420" cy="60" r="80" fill="#bae6fd" opacity="0.25"/>
+  <circle cx="60" cy="360" r="70" fill="#a7f3d0" opacity="0.2"/>
+
+  <!-- Main calendar card -->
+  <g filter="url(#card-shadow)">
+    <rect x="30" y="24" width="290" height="280" rx="18" fill="#ffffff"/>
+  </g>
+
+  <!-- Calendar header -->
+  <rect x="30" y="24" width="290" height="52" rx="18" fill="url(#p-header)"/>
+  <rect x="30" y="50" width="290" height="26" fill="url(#p-header)"/>
+  <text x="50" y="58" font-family="Manrope, sans-serif" font-size="15" font-weight="700" fill="#ffffff">February 2026</text>
+  <text x="280" y="58" font-family="Manrope, sans-serif" font-size="11" font-weight="600" fill="#bae6fd" text-anchor="end">iTrackDaily</text>
+
+  <!-- Weekday labels -->
+  <g font-family="Manrope, sans-serif" font-size="9" font-weight="600" fill="#94a3b8" text-anchor="middle">
+    <text x="62" y="92">Mon</text>
+    <text x="100" y="92">Tue</text>
+    <text x="138" y="92">Wed</text>
+    <text x="176" y="92">Thu</text>
+    <text x="214" y="92">Fri</text>
+    <text x="252" y="92">Sat</text>
+    <text x="290" y="92">Sun</text>
+  </g>
+
+  <!-- Calendar grid — row 1 (week 1: Feb starts on Sun) -->
+  <g font-family="Manrope, sans-serif" font-size="11" font-weight="600" text-anchor="middle">
+    <!-- Empty Mon-Sat -->
+    <circle cx="290" cy="112" r="13" fill="#e0f2fe"/>
+    <text x="290" y="116" fill="#0369a1">1</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g font-family="Manrope, sans-serif" font-size="11" font-weight="600" text-anchor="middle">
+    <circle cx="62" cy="138" r="13" fill="#dcfce7"/><text x="62" y="142" fill="#15803d">2</text>
+    <circle cx="100" cy="138" r="13" fill="#dcfce7"/><text x="100" y="142" fill="#15803d">3</text>
+    <circle cx="138" cy="138" r="13" fill="#e0f2fe"/><text x="138" y="142" fill="#0369a1">4</text>
+    <circle cx="176" cy="138" r="13" fill="#dcfce7"/><text x="176" y="142" fill="#15803d">5</text>
+    <circle cx="214" cy="138" r="13" fill="#dcfce7"/><text x="214" y="142" fill="#15803d">6</text>
+    <circle cx="252" cy="138" r="13" fill="#e0f2fe"/><text x="252" y="142" fill="#0369a1">7</text>
+    <circle cx="290" cy="138" r="13" fill="#dcfce7"/><text x="290" y="142" fill="#15803d">8</text>
+  </g>
+
+  <!-- Row 3 -->
+  <g font-family="Manrope, sans-serif" font-size="11" font-weight="600" text-anchor="middle">
+    <circle cx="62" cy="164" r="13" fill="#dcfce7"/><text x="62" y="168" fill="#15803d">9</text>
+    <circle cx="100" cy="164" r="13" fill="#dcfce7"/><text x="100" y="168" fill="#15803d">10</text>
+    <circle cx="138" cy="164" r="13" fill="#dcfce7"/><text x="138" y="168" fill="#15803d">11</text>
+    <circle cx="176" cy="164" r="13" fill="#f1f5f9"/><text x="176" y="168" fill="#94a3b8">12</text>
+    <circle cx="214" cy="164" r="13" fill="#dcfce7"/><text x="214" y="168" fill="#15803d">13</text>
+    <circle cx="252" cy="164" r="13" fill="#dcfce7"/><text x="252" y="168" fill="#15803d">14</text>
+    <!-- Today highlight -->
+    <circle cx="290" cy="164" r="14" fill="#0284c7"/>
+    <text x="290" y="168" fill="#ffffff" font-weight="800">15</text>
+  </g>
+
+  <!-- Row 4 (future, dimmed) -->
+  <g font-family="Manrope, sans-serif" font-size="11" font-weight="500" fill="#cbd5e1" text-anchor="middle">
+    <text x="62" y="194">16</text>
+    <text x="100" y="194">17</text>
+    <text x="138" y="194">18</text>
+    <text x="176" y="194">19</text>
+    <text x="214" y="194">20</text>
+    <text x="252" y="194">21</text>
+    <text x="290" y="194">22</text>
+  </g>
+
+  <!-- Row 5 -->
+  <g font-family="Manrope, sans-serif" font-size="11" font-weight="500" fill="#cbd5e1" text-anchor="middle">
+    <text x="62" y="220">23</text>
+    <text x="100" y="220">24</text>
+    <text x="138" y="220">25</text>
+    <text x="176" y="220">26</text>
+    <text x="214" y="220">27</text>
+    <text x="252" y="220">28</text>
+  </g>
+
+  <!-- Consistency bar -->
+  <rect x="50" y="242" width="250" height="8" rx="4" fill="#e2e8f0"/>
+  <rect x="50" y="242" width="222" height="8" rx="4" fill="#10b981"/>
+  <text x="50" y="268" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#059669">89% weekly consistency</text>
+
+  <!-- Habits card (right side) -->
+  <g filter="url(#card-shadow)">
+    <rect x="340" y="24" width="120" height="170" rx="14" fill="#ffffff"/>
+  </g>
+  <text x="356" y="48" font-family="Manrope, sans-serif" font-size="9" font-weight="700" fill="#64748b" letter-spacing="0.08em">TODAY</text>
+
+  <!-- Habit items -->
+  <g font-family="Manrope, sans-serif">
+    <!-- Habit 1 -->
+    <rect x="352" y="58" width="96" height="36" rx="8" fill="#f0fdf4"/>
+    <circle cx="366" cy="76" r="7" fill="#22c55e"/>
+    <path d="M363 76 L365 78.5 L370 73.5" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="378" y="72" font-size="9" font-weight="700" fill="#15803d">Walk</text>
+    <text x="378" y="83" font-size="8" font-weight="500" fill="#86efac">06:30</text>
+
+    <!-- Habit 2 -->
+    <rect x="352" y="100" width="96" height="36" rx="8" fill="#f0fdf4"/>
+    <circle cx="366" cy="118" r="7" fill="#22c55e"/>
+    <path d="M363 118 L365 120.5 L370 115.5" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="378" y="114" font-size="9" font-weight="700" fill="#15803d">Read</text>
+    <text x="378" y="125" font-size="8" font-weight="500" fill="#86efac">21:00</text>
+
+    <!-- Habit 3 -->
+    <rect x="352" y="142" width="96" height="36" rx="8" fill="#fff7ed"/>
+    <circle cx="366" cy="160" r="7" fill="#f59e0b" opacity="0.8"/>
+    <text x="378" y="156" font-size="9" font-weight="700" fill="#92400e">No sugar</text>
+    <text x="378" y="167" font-size="8" font-weight="500" fill="#fbbf24">all day</text>
+  </g>
+
+  <!-- Insight card (bottom right) -->
+  <g filter="url(#card-shadow)">
+    <rect x="340" y="206" width="120" height="98" rx="14" fill="#ffffff"/>
+  </g>
+
+  <!-- Sparkle icon -->
+  <path d="M365 228 L367 222 L369 228 L375 230 L369 232 L367 238 L365 232 L359 230 Z" fill="#0ea5e9"/>
+  <text x="356" y="258" font-family="Manrope, sans-serif" font-size="8.5" font-weight="700" fill="#0369a1">Smart pattern</text>
+  <text x="356" y="270" font-family="Manrope, sans-serif" font-size="8.5" font-weight="700" fill="#0369a1">found</text>
+  <text x="356" y="286" font-family="Manrope, sans-serif" font-size="7.5" font-weight="500" fill="#94a3b8">Morning walks boost</text>
+  <text x="356" y="296" font-family="Manrope, sans-serif" font-size="7.5" font-weight="500" fill="#94a3b8">your reading focus</text>
+
+  <!-- Bottom stats row -->
+  <g filter="url(#card-shadow)">
+    <rect x="30" y="320" width="430" height="80" rx="16" fill="#ffffff"/>
+  </g>
+
+  <!-- Stat 1 -->
+  <text x="80" y="352" font-family="Manrope, sans-serif" font-size="22" font-weight="800" fill="#0284c7" text-anchor="middle">12</text>
+  <text x="80" y="372" font-family="Manrope, sans-serif" font-size="9" font-weight="600" fill="#94a3b8" text-anchor="middle">days tracked</text>
+
+  <!-- Divider -->
+  <line x1="140" y1="336" x2="140" y2="386" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Stat 2 -->
+  <text x="200" y="352" font-family="Manrope, sans-serif" font-size="22" font-weight="800" fill="#059669" text-anchor="middle">89%</text>
+  <text x="200" y="372" font-family="Manrope, sans-serif" font-size="9" font-weight="600" fill="#94a3b8" text-anchor="middle">consistency</text>
+
+  <!-- Divider -->
+  <line x1="260" y1="336" x2="260" y2="386" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Stat 3 -->
+  <text x="320" y="352" font-family="Manrope, sans-serif" font-size="22" font-weight="800" fill="#7c3aed" text-anchor="middle">3</text>
+  <text x="320" y="372" font-family="Manrope, sans-serif" font-size="9" font-weight="600" fill="#94a3b8" text-anchor="middle">patterns</text>
+
+  <!-- Divider -->
+  <line x1="380" y1="336" x2="380" y2="386" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Stat 4 -->
+  <text x="420" y="350" font-family="Manrope, sans-serif" font-size="10" font-weight="800" fill="#0ea5e9" text-anchor="middle">AI</text>
+  <text x="420" y="372" font-family="Manrope, sans-serif" font-size="9" font-weight="600" fill="#94a3b8" text-anchor="middle">insights</text>
+</svg>
