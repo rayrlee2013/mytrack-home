@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Layers3, Menu, X } from "lucide-react";
+import { LayersPlus, Menu, X } from "lucide-react";
 import { siteContent, type Locale } from "@/content/siteContent";
 import { cn } from "@/lib/cn";
 
@@ -61,7 +61,7 @@ export function Navbar({ locale }: { locale: Locale }) {
           className="flex items-center gap-2"
         >
           <span className="w-8 h-8 rounded-lg bg-[var(--brand-cyan)] text-white inline-flex items-center justify-center">
-            <Layers3 className="w-4 h-4" />
+            <LayersPlus className="w-4 h-4" />
           </span>
           <div className="leading-none">
             <p className={cn("text-lg font-semibold", scrolled ? "text-slate-900" : "text-white")}>

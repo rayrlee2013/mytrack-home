@@ -1,87 +1,118 @@
-<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="520" height="520" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F4F9FF"/>
-      <stop offset="1" stop-color="#EAF2FB"/>
+    <linearGradient id="card-bg" x1="60" y1="60" x2="460" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="160" y1="120" x2="360" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="brain-grad" x1="210" y1="160" x2="310" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e0f7f5"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.4"/>
     </linearGradient>
   </defs>
 
-  <rect width="1200" height="800" rx="32" fill="url(#bg)"/>
+  <!-- Outer orbit ring -->
+  <circle cx="260" cy="240" r="180" stroke="url(#ring)" stroke-width="1.5" fill="none" stroke-dasharray="8 6" opacity="0.5"/>
+  <circle cx="260" cy="240" r="140" stroke="url(#ring)" stroke-width="1" fill="none" stroke-dasharray="4 8" opacity="0.3"/>
 
-  <circle cx="140" cy="120" r="56" fill="#D8EEFF"/>
-  <circle cx="1050" cy="150" r="72" fill="#E7E2FF"/>
-  <circle cx="1040" cy="640" r="68" fill="#FFECD9"/>
+  <!-- Central glow -->
+  <circle cx="260" cy="240" r="90" fill="#ffffff" opacity="0.08"/>
+  <circle cx="260" cy="240" r="60" fill="#ffffff" opacity="0.1"/>
 
-  <rect x="76" y="80" width="420" height="92" rx="20" fill="#FFFFFF" stroke="#D6E7F7" stroke-width="2"/>
-  <text x="104" y="126" font-family="Manrope, sans-serif" font-size="28" font-weight="800" fill="#112342">MyTrack</text>
-  <text x="104" y="152" font-family="Manrope, sans-serif" font-size="16" font-weight="600" fill="#4A617F">Personal + AI + Data + Daily Life</text>
+  <!-- Person silhouette (center) -->
+  <circle cx="260" cy="205" r="28" fill="url(#brain-grad)" opacity="0.95"/>
+  <path d="M222 270 C222 248 240 235 260 235 C280 235 298 248 298 270 L298 285 C298 290 294 294 289 294 L231 294 C226 294 222 290 222 285 Z" fill="url(#brain-grad)" opacity="0.9"/>
 
-  <rect x="76" y="208" width="420" height="172" rx="20" fill="#FFFFFF" stroke="#D6E7F7" stroke-width="2"/>
-  <text x="104" y="248" font-family="Manrope, sans-serif" font-size="18" font-weight="700" fill="#1086D2">Life Logging</text>
-  <text x="104" y="278" font-family="Manrope, sans-serif" font-size="15" font-weight="500" fill="#4A617F">Capture routines and moments with low friction.</text>
+  <!-- AI brain circuit lines inside head -->
+  <circle cx="252" cy="200" r="3" fill="#38b2ac"/>
+  <circle cx="268" cy="200" r="3" fill="#38b2ac"/>
+  <circle cx="260" cy="212" r="3" fill="#38b2ac"/>
+  <line x1="252" y1="200" x2="260" y2="212" stroke="#38b2ac" stroke-width="1.5" opacity="0.8"/>
+  <line x1="268" y1="200" x2="260" y2="212" stroke="#38b2ac" stroke-width="1.5" opacity="0.8"/>
+  <line x1="252" y1="200" x2="268" y2="200" stroke="#38b2ac" stroke-width="1.5" opacity="0.8"/>
 
-  <rect x="104" y="300" width="170" height="38" rx="10" fill="#E9F4FF" stroke="#B7D9F8"/>
-  <text x="126" y="324" font-family="Manrope, sans-serif" font-size="13" font-weight="700" fill="#1A5A93">Private by default</text>
+  <!-- Floating data nodes on orbit -->
+  <!-- Node 1: top-right - chart icon -->
+  <g transform="translate(378, 130)">
+    <rect x="-28" y="-28" width="56" height="56" rx="14" fill="#ffffff" opacity="0.2"/>
+    <rect x="-20" y="-20" width="40" height="40" rx="10" fill="#ffffff" opacity="0.9"/>
+    <rect x="-10" y="4" width="6" height="12" rx="2" fill="#38b2ac"/>
+    <rect x="-2" y="-4" width="6" height="20" rx="2" fill="#2c9f99"/>
+    <rect x="6" y="-8" width="6" height="24" rx="2" fill="#38b2ac"/>
+  </g>
 
-  <rect x="286" y="300" width="180" height="38" rx="10" fill="#E8F8F4" stroke="#B8EADC"/>
-  <text x="309" y="324" font-family="Manrope, sans-serif" font-size="13" font-weight="700" fill="#1E6F62">AI-assisted insights</text>
+  <!-- Node 2: top-left - AI spark -->
+  <g transform="translate(142, 130)">
+    <rect x="-28" y="-28" width="56" height="56" rx="14" fill="#ffffff" opacity="0.2"/>
+    <rect x="-20" y="-20" width="40" height="40" rx="10" fill="#ffffff" opacity="0.9"/>
+    <path d="M0 -10 L3 -2 L10 0 L3 2 L0 10 L-3 2 L-10 0 L-3 -2 Z" fill="#e8a0bf"/>
+    <circle cx="0" cy="0" r="3" fill="#d97785"/>
+  </g>
 
-  <rect x="76" y="404" width="420" height="314" rx="20" fill="#FFFFFF" stroke="#D6E7F7" stroke-width="2"/>
-  <text x="104" y="446" font-family="Manrope, sans-serif" font-size="18" font-weight="700" fill="#112342">Data clarity for daily decisions</text>
+  <!-- Node 3: bottom-right - shield/privacy -->
+  <g transform="translate(400, 310)">
+    <rect x="-28" y="-28" width="56" height="56" rx="14" fill="#ffffff" opacity="0.2"/>
+    <rect x="-20" y="-20" width="40" height="40" rx="10" fill="#ffffff" opacity="0.9"/>
+    <path d="M0 -12 L10 -6 L10 4 C10 10 4 14 0 16 C-4 14 -10 10 -10 4 L-10 -6 Z" fill="none" stroke="#38b2ac" stroke-width="2"/>
+    <path d="M-4 1 L-1 4 L5 -3" stroke="#38b2ac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 
-  <rect x="104" y="470" width="112" height="88" rx="14" fill="#E9F4FF" stroke="#B7D9F8"/>
-  <text x="128" y="510" font-family="Manrope, sans-serif" font-size="26" font-weight="800" fill="#155A93">7d</text>
-  <text x="121" y="536" font-family="Manrope, sans-serif" font-size="13" font-weight="600" fill="#4A617F">consistency</text>
+  <!-- Node 4: bottom-left - calendar/daily -->
+  <g transform="translate(120, 310)">
+    <rect x="-28" y="-28" width="56" height="56" rx="14" fill="#ffffff" opacity="0.2"/>
+    <rect x="-20" y="-20" width="40" height="40" rx="10" fill="#ffffff" opacity="0.9"/>
+    <rect x="-10" y="-8" width="20" height="18" rx="3" fill="none" stroke="#c88cc8" stroke-width="1.8"/>
+    <line x1="-10" y1="-2" x2="10" y2="-2" stroke="#c88cc8" stroke-width="1.5"/>
+    <circle cx="-4" cy="4" r="1.5" fill="#c88cc8"/>
+    <circle cx="2" cy="4" r="1.5" fill="#c88cc8"/>
+    <line x1="-6" y1="-12" x2="-6" y2="-6" stroke="#c88cc8" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="6" y1="-12" x2="6" y2="-6" stroke="#c88cc8" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
 
-  <rect x="232" y="470" width="112" height="88" rx="14" fill="#F0EFFF" stroke="#D0C9FF"/>
-  <text x="258" y="510" font-family="Manrope, sans-serif" font-size="26" font-weight="800" fill="#52419E">AI</text>
-  <text x="257" y="536" font-family="Manrope, sans-serif" font-size="13" font-weight="600" fill="#4A617F">summary</text>
+  <!-- Connecting lines from person to nodes (subtle) -->
+  <line x1="285" y1="215" x2="350" y2="140" stroke="#ffffff" stroke-width="1" opacity="0.2" stroke-dasharray="4 3"/>
+  <line x1="235" y1="215" x2="170" y2="140" stroke="#ffffff" stroke-width="1" opacity="0.2" stroke-dasharray="4 3"/>
+  <line x1="290" y1="260" x2="372" y2="300" stroke="#ffffff" stroke-width="1" opacity="0.2" stroke-dasharray="4 3"/>
+  <line x1="230" y1="260" x2="148" y2="300" stroke="#ffffff" stroke-width="1" opacity="0.2" stroke-dasharray="4 3"/>
 
-  <rect x="360" y="470" width="112" height="88" rx="14" fill="#FFF3E8" stroke="#FFD8B0"/>
-  <text x="386" y="510" font-family="Manrope, sans-serif" font-size="26" font-weight="800" fill="#9A5A19">+3</text>
-  <text x="379" y="536" font-family="Manrope, sans-serif" font-size="13" font-weight="600" fill="#4A617F">patterns</text>
+  <!-- Small floating particles -->
+  <circle cx="320" cy="180" r="3" fill="#ffffff" opacity="0.4"/>
+  <circle cx="200" cy="180" r="2" fill="#ffffff" opacity="0.3"/>
+  <circle cx="340" cy="270" r="2.5" fill="#ffffff" opacity="0.35"/>
+  <circle cx="180" cy="270" r="2" fill="#ffffff" opacity="0.3"/>
+  <circle cx="300" cy="340" r="2" fill="#ffffff" opacity="0.25"/>
+  <circle cx="220" cy="340" r="3" fill="#ffffff" opacity="0.3"/>
 
-  <path d="M118 620 L194 588 L260 612 L334 564 L410 594" stroke="#1086D2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="118" cy="620" r="6" fill="#1086D2"/>
-  <circle cx="194" cy="588" r="6" fill="#1E6F62"/>
-  <circle cx="260" cy="612" r="6" fill="#52419E"/>
-  <circle cx="334" cy="564" r="6" fill="#9A5A19"/>
-  <circle cx="410" cy="594" r="6" fill="#1086D2"/>
+  <!-- Bottom data bar chart area -->
+  <g transform="translate(150, 380)">
+    <rect x="0" y="0" width="220" height="80" rx="16" fill="#ffffff" opacity="0.12"/>
 
-  <rect x="550" y="92" width="570" height="626" rx="28" fill="#FFFFFF" stroke="#CFE2F3" stroke-width="2"/>
-  <rect x="550" y="92" width="570" height="108" rx="28" fill="#1086D2"/>
-  <text x="590" y="142" font-family="Manrope, sans-serif" font-size="20" font-weight="800" fill="#F1FAFF">iTrackDaily</text>
-  <text x="590" y="172" font-family="Manrope, sans-serif" font-size="15" font-weight="600" fill="#D5EEFF">Track life privately. Understand progress instantly.</text>
+    <!-- Mini trend line -->
+    <polyline points="20,55 50,40 80,48 110,30 140,35 170,20 200,28" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.7"/>
 
-  <rect x="590" y="228" width="490" height="128" rx="18" fill="#F6FBFF" stroke="#D5E6F5"/>
-  <text x="620" y="268" font-family="Manrope, sans-serif" font-size="17" font-weight="700" fill="#112342">Morning routine block</text>
-  <text x="620" y="296" font-family="Manrope, sans-serif" font-size="14" font-weight="500" fill="#4A617F">Walk + reading + no sugar.</text>
+    <!-- Data dots -->
+    <circle cx="20" cy="55" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="50" cy="40" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="80" cy="48" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="110" cy="30" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="140" cy="35" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="170" cy="20" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="200" cy="28" r="3" fill="#ffffff" opacity="0.8"/>
 
-  <rect x="620" y="314" width="128" height="30" rx="10" fill="#E8F8F4" stroke="#B8EADC"/>
-  <text x="644" y="334" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#1E6F62">89% consistency</text>
+    <!-- Label -->
+    <text x="110" y="74" font-family="Manrope, sans-serif" font-size="10" font-weight="600" fill="#ffffff" opacity="0.5" text-anchor="middle">INSIGHTS</text>
+  </g>
 
-  <rect x="590" y="378" width="490" height="146" rx="18" fill="#F6FBFF" stroke="#D5E6F5"/>
-  <text x="620" y="418" font-family="Manrope, sans-serif" font-size="17" font-weight="700" fill="#112342">Weekly analysis snapshot</text>
-
-  <rect x="620" y="438" width="92" height="58" rx="12" fill="#E9F4FF" stroke="#B7D9F8"/>
-  <text x="654" y="470" font-family="Manrope, sans-serif" font-size="22" font-weight="800" fill="#155A93">12</text>
-
-  <rect x="726" y="438" width="92" height="58" rx="12" fill="#F0EFFF" stroke="#D0C9FF"/>
-  <text x="762" y="470" font-family="Manrope, sans-serif" font-size="22" font-weight="800" fill="#52419E">4</text>
-
-  <rect x="832" y="438" width="92" height="58" rx="12" fill="#FFF3E8" stroke="#FFD8B0"/>
-  <text x="866" y="470" font-family="Manrope, sans-serif" font-size="22" font-weight="800" fill="#9A5A19">7</text>
-
-  <rect x="938" y="438" width="122" height="58" rx="12" fill="#E8F8F4" stroke="#B8EADC"/>
-  <text x="966" y="470" font-family="Manrope, sans-serif" font-size="16" font-weight="800" fill="#1E6F62">AI Tips</text>
-
-  <rect x="590" y="548" width="490" height="138" rx="18" fill="#F6FBFF" stroke="#D5E6F5"/>
-  <text x="620" y="590" font-family="Manrope, sans-serif" font-size="17" font-weight="700" fill="#112342">Future product direction</text>
-  <text x="620" y="620" font-family="Manrope, sans-serif" font-size="14" font-weight="500" fill="#4A617F">Personal context + AI assistant + behavior analytics.</text>
-
-  <rect x="620" y="636" width="220" height="30" rx="10" fill="#1086D2"/>
-  <text x="662" y="656" font-family="Manrope, sans-serif" font-size="12" font-weight="800" fill="#F4FAFF">daily.mytrack.club</text>
-
-  <circle cx="1114" cy="88" r="24" fill="#E9F4FF" stroke="#B7D9F8"/>
-  <circle cx="1114" cy="88" r="9" fill="#1086D2"/>
+  <!-- Small orbiting dots (animated feel) -->
+  <circle cx="260" cy="60" r="4" fill="#ffffff" opacity="0.5"/>
+  <circle cx="440" cy="240" r="4" fill="#ffffff" opacity="0.4"/>
+  <circle cx="80" cy="240" r="4" fill="#ffffff" opacity="0.4"/>
+  <circle cx="260" cy="420" r="4" fill="#ffffff" opacity="0.35"/>
 </svg>

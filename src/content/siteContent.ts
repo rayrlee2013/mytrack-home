@@ -26,17 +26,18 @@ export const siteContent = {
         about: "About",
         contact: "Contact",
       },
-      heroBadge: "AI meets your life, helps every day.",
       heroTitleA: "Smart tracking,",
       heroTitleB: "simple living",
       heroSubtitle:
-        "Empowering individuals through AI-powered products and services, turning daily data into meaningful insights, because your privacy matters.",
-      heroPrimaryCta: "Try iTrackDaily",
-      heroSecondaryCta: "Learn More",
-      tagline: "AI meets your life, helps every day.",
+        "AI-powered tools that turn your everyday moments into clear self-understanding — while keeping your data entirely yours.",
+      heroHighlights: [
+        "AI-driven personal insights",
+        "Privacy you can trust",
+        "Built for real daily life",
+      ],
     },
     home: {
-      focusTitle: "From daily data to meaningful insights",
+      focusTitle: "Four pillars of a better daily loop",
       focusAreas: [
         {
           title: "Personal Context",
@@ -45,25 +46,25 @@ export const siteContent = {
         },
         {
           title: "AI Assistance",
-          desc: "Use AI to summarize behavior and suggest practical next steps.",
+          desc: "Summarize behavior and surface practical next steps automatically.",
           tone: "tone-teal",
         },
         {
-          title: "Data Analysis",
-          desc: "Turn raw daily logs into trend-level clarity.",
+          title: "Data Clarity",
+          desc: "Transform raw logs into trend-level understanding you can act on.",
           tone: "tone-violet",
         },
         {
-          title: "Daily Life Loop",
-          desc: "Make records simple enough to sustain every day.",
+          title: "Effortless Habit",
+          desc: "Keep the recording friction so low it becomes second nature.",
           tone: "tone-amber",
         },
       ],
     },
     products: {
-      title: "Product Portfolio",
+      title: "Products",
       subtitle:
-        "Current and future products under MyTrack, all aligned with one philosophy for personal AI and data insight.",
+        "Tools built under one roof, each solving a real piece of the personal data puzzle.",
       openCta: "Open product",
       domainsTitle: "Core product domains",
       domains: [
@@ -85,72 +86,82 @@ export const siteContent = {
       ],
     },
     philosophy: {
-      title: "Product Philosophy",
-      subtitle: "AI meets your data, with privacy and clarity.",
+      title: "Why We Build This Way",
+      subtitle: "Principles that shape every product decision.",
       principles: [
         {
-          title: "AI meets your data",
-          desc: "Use AI to transform raw daily records into understandable, meaningful insights.",
+          title: "Intelligence that serves you",
+          desc: "AI should clarify, not complicate. Every insight must be explainable and worth your attention.",
           tone: "tone-blue",
         },
         {
-          title: "Privacy by design",
-          desc: "Protect user control by minimizing collection and avoiding invasive defaults.",
+          title: "Your data, your rules",
+          desc: "Minimal collection, no invasive defaults, no monetisation of personal information — ever.",
           tone: "tone-teal",
         },
         {
-          title: "Smart tracking, simple living",
-          desc: "Keep workflows light so people can sustain better habits in real daily life.",
+          title: "Light enough to last",
+          desc: "If a workflow can't survive a busy Tuesday morning, it isn't ready to ship.",
           tone: "tone-violet",
         },
       ],
-      workflowTitle: "How philosophy becomes product",
+      workflowTitle: "From idea to product",
       workflowSteps: [
         {
-          title: "Start from real daily behavior",
-          desc: "Observe how people actually record, reflect, and decide in daily life.",
+          title: "Observe real behavior",
+          desc: "Understand how people actually record, reflect, and decide day-to-day.",
         },
         {
-          title: "Build the smallest useful loop",
-          desc: "Ship a simple capture → insight → action cycle before adding complexity.",
+          title: "Ship the smallest loop",
+          desc: "Deliver a capture → insight → action cycle before adding any complexity.",
         },
         {
-          title: "Scale with AI + analytics",
-          desc: "Add intelligence only when it improves clarity, confidence, and actionability.",
+          title: "Add intelligence gradually",
+          desc: "Introduce AI and analytics only when they measurably improve clarity.",
         },
       ],
     },
     about: {
       title: "About MyTrack",
-      subtitle: "Smart tracking, simple living",
+      subtitle: "A one-person studio with a full-stack mindset",
       brand: {
         intro:
-          "MyTrack is a personal brand dedicated to building AI-powered products and services that help individuals transform their daily data into clear, meaningful insights.",
+          "MyTrack is a personal product studio born from a simple belief: the data you generate every day holds patterns that can genuinely improve your life — if the right tools exist to surface them.",
         vision:
-          "In an era of data abundance, everyone deserves to understand their own patterns and make informed decisions, without trading away their privacy.",
+          "Most personal-data tools demand too much input and return too little understanding. We set out to reverse that equation: minimal effort in, maximum clarity out.",
+        approach:
+          "Each product starts from a real daily friction, not a feature list. We prototype with live behavior, validate with measurable outcomes, and only add complexity when it earns its place.",
+        mission:
+          "Close the gap between raw personal data and actionable self-understanding, so that better habits, decisions, and well-being become natural outcomes of daily life.",
       },
       founder: {
         greeting: "Hi, I'm Ray",
         role: "Senior Full-Stack Engineer",
         experience: "10+ years in mobile & web development",
-        signature: "Strong individual execution with full-stack capability for AI application development.",
+        signature:
+          "I build end-to-end products across frontend, backend, cloud infrastructure, and AI systems — with a strong focus on performance, maintainability, and user experience.",
+        highlights: [
+          "Deep expertise in AI, computer vision, and autonomous driving systems",
+          "Built production-scale solutions serving millions of users",
+          "Now channeling that experience into privacy-first everyday tools",
+        ],
       },
       principles: {
-        heading: "Core Principles",
+        heading: "What We Value",
         items: [
           {
-            title: "Minimal Design",
-            desc: "Less noise, more clarity. Great tools should blend into your life, not complicate it.",
+            title: "Calm Interfaces",
+            desc: "Reduce visual noise to the minimum. The best tool is the one you barely notice using.",
             tone: "tone-blue",
           },
           {
-            title: "Privacy First",
-            desc: "Your data stays yours. We never sell, share, or monetise your personal information.",
+            title: "Honest Data Practice",
+            desc: "Collect only what's needed, explain why, and never share it without explicit consent.",
             tone: "tone-teal",
           },
           {
-            title: "AI with Purpose",
-            desc: "Intelligent tools that enhance understanding, not replace human judgment.",
+            title: "Purposeful Automation",
+            desc: "Automate the tedious, but leave the meaningful decisions to the person who owns the data.",
             tone: "tone-violet",
           },
         ],
@@ -181,17 +192,18 @@ export const siteContent = {
         about: "关于",
         contact: "联系",
       },
-      heroBadge: "AI 遇见你的生活，每天都能帮上你。",
       heroTitleA: "智能追踪，",
       heroTitleB: "简单生活",
       heroSubtitle:
-        "通过 AI 驱动的产品和服务赋能个人，将日常数据转化为有意义的洞察，因为你的隐私很重要。",
-      heroPrimaryCta: "体验 iTrackDaily",
-      heroSecondaryCta: "了解更多",
-      tagline: "AI 遇见你的生活，每天都能帮上你。",
+        "用 AI 驱动的工具，把你的日常碎片变成清晰的自我认知——同时让数据完全属于你自己。",
+      heroHighlights: [
+        "AI 驱动的个人洞察",
+        "值得信赖的隐私保护",
+        "为真实日常而生",
+      ],
     },
     home: {
-      focusTitle: "从日常数据到有意义洞察",
+      focusTitle: "日常闭环的四个支柱",
       focusAreas: [
         {
           title: "个人语境",
@@ -200,24 +212,24 @@ export const siteContent = {
         },
         {
           title: "AI 助手",
-          desc: "用 AI 提炼行为信息并给出可执行建议。",
+          desc: "自动提炼行为信息并给出可执行的下一步建议。",
           tone: "tone-teal",
         },
         {
-          title: "数据分析",
-          desc: "把日常记录转成趋势层面的清晰反馈。",
+          title: "数据清晰度",
+          desc: "把原始记录转成可行动的趋势层面反馈。",
           tone: "tone-violet",
         },
         {
-          title: "日常闭环",
-          desc: "让记录足够轻量，才能每天持续发生。",
+          title: "无感习惯",
+          desc: "让记录负担低到像呼吸一样自然。",
           tone: "tone-amber",
         },
       ],
     },
     products: {
-      title: "产品矩阵",
-      subtitle: "MyTrack 旗下当前与未来产品，统一服务个人 AI 与数据洞察场景。",
+      title: "产品",
+      subtitle: "同一屋檐下的工具，每一个都在解决个人数据拼图中的真实问题。",
       openCta: "进入产品",
       domainsTitle: "核心产品域",
       domains: [
@@ -239,72 +251,82 @@ export const siteContent = {
       ],
     },
     philosophy: {
-      title: "产品理念",
-      subtitle: "AI 与你的数据相遇，同时保持隐私与清晰。",
+      title: "为什么这样做产品",
+      subtitle: "影响每一个产品决策的原则。",
       principles: [
         {
-          title: "AI 与你的数据相遇",
-          desc: "用 AI 把原始日常记录转化为可理解、有意义的洞察。",
+          title: "为你服务的智能",
+          desc: "AI 应该带来清晰而非复杂，每条洞察都必须可解释、值得你关注。",
           tone: "tone-blue",
         },
         {
-          title: "隐私优先，设计内建",
-          desc: "最小化不必要采集，避免侵入式默认设置，保证用户数据控制权。",
+          title: "你的数据，你做主",
+          desc: "最小化采集，不设侵入式默认，永远不变现个人信息。",
           tone: "tone-teal",
         },
         {
-          title: "智能追踪，简单生活",
-          desc: "保持流程轻量，让用户在真实日常中持续获得进展反馈。",
+          title: "轻到可以持续",
+          desc: "如果一个流程扛不住忙碌的周二早晨，它还没准备好上线。",
           tone: "tone-violet",
         },
       ],
-      workflowTitle: "理念如何落地为产品",
+      workflowTitle: "从想法到产品",
       workflowSteps: [
         {
-          title: "从真实日常行为出发",
-          desc: "先理解用户如何记录、复盘和做决策，再定义产品起点。",
+          title: "观察真实行为",
+          desc: "先理解用户如何记录、复盘和做决策。",
         },
         {
-          title: "先做最小可用闭环",
-          desc: "优先打通记录 → 洞察 → 行动的最短路径，再扩展功能。",
+          title: "交付最小闭环",
+          desc: "打通记录 → 洞察 → 行动的最短路径，再扩展功能。",
         },
         {
-          title: "再引入 AI 与分析能力",
-          desc: "只有当 AI/分析能提升清晰度与可执行性时才增加复杂度。",
+          title: "渐进引入智能",
+          desc: "只有当 AI 和分析能可度量地提升清晰度时才增加复杂度。",
         },
       ],
     },
     about: {
       title: "关于 MyTrack",
-      subtitle: "智能记录，简单生活",
+      subtitle: "一个人的工作室，全栈的思维方式",
       brand: {
         intro:
-          "MyTrack 是一个个人品牌，致力于打造 AI 驱动的产品和服务，帮助个人将日常数据转化为清晰、有意义的洞察。",
+          "MyTrack 源自一个简单的信念：你每天产生的数据中隐藏着能真正改善生活的规律——只要有合适的工具把它们呈现出来。",
         vision:
-          "在数据爆炸的时代，每个人都值得理解自己的行为模式，并在不牺牲隐私的前提下做出更明智的决策。",
+          "大多数个人数据工具要求太多输入，却回报太少理解。我们要翻转这个等式：最少的投入，最大的清晰度。",
+        approach:
+          "每个产品都从一个真实的日常摩擦点出发，而不是功能清单。我们用真实行为做原型，用可度量的结果做验证，只有复杂度「值得」时才引入。",
+        mission:
+          "弥合原始个人数据与可执行自我认知之间的鸿沟，让更好的习惯、决策和身心状态成为日常生活的自然结果。",
       },
       founder: {
         greeting: "你好，我是 Ray",
         role: "高级全栈工程师",
         experience: "10+ 年移动端与 Web 开发经验",
-        signature: "具备超强个人战斗力，能够独立完成 AI 应用的全栈开发。",
+        signature:
+          "长期在前端、后端、云基础设施与 AI 系统之间协同构建端到端产品，重点关注性能、可维护性与用户体验。",
+        highlights: [
+          "在 AI、计算机视觉与自动驾驶系统方向有深度经验",
+          "构建过服务数百万用户的生产级解决方案",
+          "现在将经验投入到打造隐私优先的日常工具中",
+        ],
       },
       principles: {
-        heading: "核心原则",
+        heading: "我们看重什么",
         items: [
           {
-            title: "极简设计",
-            desc: "更少噪音，更高清晰度。好的工具应融入生活，而不是增加复杂度。",
+            title: "克制的界面",
+            desc: "把视觉噪音降到最低。最好的工具是你几乎感觉不到在用的那个。",
             tone: "tone-blue",
           },
           {
-            title: "隐私优先",
-            desc: "你的数据属于你。我们不会出售、分享或变现你的个人信息。",
+            title: "诚实的数据实践",
+            desc: "只采集必要的，说明原因，未经明确同意绝不分享。",
             tone: "tone-teal",
           },
           {
-            title: "有目的的 AI",
-            desc: "AI 的价值是增强理解，而不是替代人的判断。",
+            title: "有目的的自动化",
+            desc: "把繁琐的事交给机器，把有意义的决定留给数据的主人。",
             tone: "tone-violet",
           },
         ],

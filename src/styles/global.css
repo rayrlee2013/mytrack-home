@@ -127,8 +127,100 @@ a {
 
 .hero-gradient {
   background: linear-gradient(135deg, #43b7b7 0%, #e8a0bf 60%, #c88cc8 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 12s ease-in-out infinite;
   position: relative;
   overflow: hidden;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Floating particles */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  animation: particle-float linear infinite;
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(40px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Slow-moving bokeh blobs */
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.hero-blob-1 {
+  width: 320px;
+  height: 320px;
+  background: #ffffff;
+  top: -10%;
+  right: 10%;
+  animation: blob-drift-1 16s ease-in-out infinite;
+}
+
+.hero-blob-2 {
+  width: 260px;
+  height: 260px;
+  background: #e8a0bf;
+  bottom: 5%;
+  left: 8%;
+  animation: blob-drift-2 20s ease-in-out infinite;
+}
+
+.hero-blob-3 {
+  width: 200px;
+  height: 200px;
+  background: #81e6d9;
+  top: 40%;
+  left: 50%;
+  animation: blob-drift-3 14s ease-in-out infinite;
+}
+
+@keyframes blob-drift-1 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-30px, 20px); }
+  66% { transform: translate(20px, -15px); }
+}
+
+@keyframes blob-drift-2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(25px, -20px); }
+  66% { transform: translate(-15px, 10px); }
+}
+
+@keyframes blob-drift-3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, -25px); }
 }
 
 /* ── Geometric triangle decorations ── */

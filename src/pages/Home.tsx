@@ -12,7 +12,6 @@ import {
 import { Footer } from "@/components/layout/Footer";
 import {
   type Locale,
-  dashboardUrl,
   productCatalog,
   siteContent,
 } from "@/content/siteContent";
@@ -33,7 +32,27 @@ export default function HomePage({ locale }: { locale: Locale }) {
     <div className="min-h-screen flex flex-col page-shell">
       {/* ── Hero ── */}
       <section className="hero-gradient min-h-[85vh] flex items-center pt-20 pb-16">
-        <div className="site-container">
+        {/* Animated background */}
+        <div className="hero-blob hero-blob-1" />
+        <div className="hero-blob hero-blob-2" />
+        <div className="hero-blob hero-blob-3" />
+        <div className="hero-particles">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <span
+              key={i}
+              className="hero-particle"
+              style={{
+                width: `${4 + (i % 4) * 3}px`,
+                height: `${4 + (i % 4) * 3}px`,
+                left: `${5 + (i * 8) % 90}%`,
+                bottom: `${-10 - (i * 7) % 20}%`,
+                animationDuration: `${8 + (i % 5) * 3}s`,
+                animationDelay: `${(i * 1.3) % 8}s`,
+              }}
+            />
+          ))}
+        </div>
+        <div className="site-container relative z-10">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
             <div className="animate-rise">
               <h1 className="text-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.05] text-white">
@@ -46,26 +65,17 @@ export default function HomePage({ locale }: { locale: Locale }) {
                 {brand.heroSubtitle}
               </p>
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <a
-                  href={dashboardUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill btn-pill-white btn-motion"
-                >
-                  {brand.heroPrimaryCta}
-                  <ArrowRight className="w-4 h-4 motion-arrow" />
-                </a>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("features")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="btn-pill btn-pill-outline"
-                >
-                  {brand.heroSecondaryCta}
-                </button>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {brand.heroHighlights.map((h, i) => (
+                  <span
+                    key={h}
+                    className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 px-4 py-2 text-sm font-medium text-white animate-fade-soft"
+                    style={{ animationDelay: `${0.3 + i * 0.15}s` }}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                    {h}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -161,8 +171,8 @@ export default function HomePage({ locale }: { locale: Locale }) {
 
               <div className="hidden md:block p-6">
                 <img
-                  src="/illustrations/mytrack-hero-ai-life.svg"
-                  alt="iTrackDaily product"
+                  src="/illustrations/itrackdaily-product.svg"
+                  alt="iTrackDaily — calendar tracking, habits, and AI insights"
                   className="w-full rounded-xl"
                 />
               </div>
@@ -251,45 +261,82 @@ export default function HomePage({ locale }: { locale: Locale }) {
             {about.subtitle}
           </p>
 
-          {/* Brand + Founder */}
-          <div className="mt-10 surface-card p-8 md:p-10">
-            <p className="text-lg text-slate-700 leading-8">{about.brand.intro}</p>
-            <p className="mt-4 text-slate-600 leading-7">{about.brand.vision}</p>
+          {/* Two-column: brand story + founder */}
+          <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] items-start">
+            {/* Left — Brand story */}
+            <div className="surface-card p-8 md:p-10 h-full">
+              <p className="text-xs font-bold tracking-[0.14em] text-[var(--brand-cyan)] uppercase">
+                Our Story
+              </p>
+              <p className="mt-4 text-lg text-slate-800 leading-8 font-medium">
+                {about.brand.intro}
+              </p>
+              <p className="mt-4 text-slate-600 leading-7">{about.brand.vision}</p>
+              <p className="mt-4 text-slate-600 leading-7">{about.brand.approach}</p>
 
-            <hr className="my-8 border-slate-200" />
-
-            <div className="flex flex-col sm:flex-row gap-6 items-start">
-              <div className="w-14 h-14 rounded-full bg-[var(--brand-cyan)] text-white flex items-center justify-center text-xl font-bold shrink-0">
-                R
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-slate-900">
-                  {about.founder.greeting}
-                </h3>
-                <p className="mt-1 text-sm text-[var(--brand-cyan)] font-semibold">
-                  {about.founder.role} &middot; {about.founder.experience}
-                </p>
-                <p className="mt-3 text-slate-600 leading-7">
-                  {about.founder.signature}
+              <div className="mt-6 rounded-xl bg-gradient-to-r from-[var(--tone-teal-bg)] to-[var(--tone-blue-bg)] border border-[var(--tone-teal-line)] p-5">
+                <p className="text-slate-700 leading-7 italic">
+                  &ldquo;{about.brand.mission}&rdquo;
                 </p>
               </div>
             </div>
+
+            {/* Right — Founder */}
+            <div className="surface-card p-8 md:p-10 h-full flex flex-col">
+              <p className="text-xs font-bold tracking-[0.14em] text-[var(--brand-cyan)] uppercase">
+                Founder
+              </p>
+
+              <div className="mt-4 flex items-center gap-4">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[var(--brand-cyan)] to-[#4fd1c5] text-white flex items-center justify-center text-xl font-bold shrink-0 shadow-md">
+                  R
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900">
+                    {about.founder.greeting}
+                  </h3>
+                  <p className="text-sm text-[var(--brand-cyan)] font-semibold">
+                    {about.founder.role}
+                  </p>
+                  <p className="text-xs text-slate-500 mt-0.5">
+                    {about.founder.experience}
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-5 text-slate-600 leading-7 text-sm">
+                {about.founder.signature}
+              </p>
+
+              <ul className="mt-5 space-y-3 flex-1">
+                {about.founder.highlights.map((h) => (
+                  <li key={h} className="flex items-start gap-3 text-sm text-slate-600 leading-6">
+                    <span className="mt-1 w-5 h-5 rounded-md bg-[var(--tone-teal-bg)] border border-[var(--tone-teal-line)] flex items-center justify-center shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-cyan)]" />
+                    </span>
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Core Principles */}
-          <h3 className="mt-14 text-xl font-bold text-slate-900 text-center">
-            {about.principles.heading}
-          </h3>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {about.principles.items.map((p) => (
-              <article
-                key={p.title}
-                className={`feature-tone ${p.tone} card-lift`}
-              >
-                <h4 className="font-semibold">{p.title}</h4>
-                <p className="mt-2 text-sm leading-6 opacity-85">{p.desc}</p>
-              </article>
-            ))}
+          {/* Core Principles — horizontal cards */}
+          <div className="mt-12">
+            <h3 className="text-xl font-bold text-slate-900 text-center">
+              {about.principles.heading}
+            </h3>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {about.principles.items.map((p) => (
+                <article
+                  key={p.title}
+                  className={`feature-tone ${p.tone} card-lift text-center`}
+                >
+                  <h4 className="font-semibold text-base">{p.title}</h4>
+                  <p className="mt-2 text-sm leading-6 opacity-85">{p.desc}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
